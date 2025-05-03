@@ -16,14 +16,16 @@ body {
 }
 
 .banner-container {
-    width: 200px;
+    width: 8vw;
+    max-width: 120px;
+    min-width: 60px;
     height: 100vh;
     background-color: white;
     overflow: hidden;
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 1;
 }
 
 .banner {
@@ -40,13 +42,25 @@ body {
     overflow: scroll;
     overflow-x: hidden;
     height: 100%;
-    width: calc(100% - 200px);
-    left: 200px;
+    width: calc(100% - 8vw);
+    left: 8vw;
     top: 0;
     margin-top: 24px;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 2;
+}
+
+@media screen and (max-width: 600px) {
+    .banner-container {
+        width: 5vw;
+        min-width: 40px;
+    }
+
+    .outerContainer {
+        width: calc(100% - 5vw);
+        left: 5vw;
+    }
 }
 
 @media screen and (max-width: 980px) {
@@ -267,9 +281,9 @@ body.dark {
     color: #cc8f1a;
 }
 
-.dark .unclickable{
+.dark .unclickable {
     color: #c4af87;
-    cursor:not-allowed;
+    cursor: not-allowed;
 }
 
 .dark a:hover {
